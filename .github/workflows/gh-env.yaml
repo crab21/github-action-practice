@@ -65,14 +65,6 @@ jobs:
           }
           log info ("Running workflow_dispatch, modules: " | append $env.app | str join '')
           
-      - name: jobs var
-        id: generate-files-var
-        env:
-          app: ${{ inputs.app }}
-        shell: nu {0}
-        run: |
-          use std log
-          log info (${{ steps }} | to json)
       - name: push event
         if: ${{ github.event_name == 'push' }}
         run: |
