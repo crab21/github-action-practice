@@ -53,8 +53,8 @@ jobs:
         run: |
           use std log
           log info (open $env.GITHUB_STEP_SUMMARY)
-          log info (${{ step.good-id.outputs.good }})
+          log info (${{ steps.good-id.outputs.good }})
       - name: job var shell
         shell: bash
         run: |
-          echo ${{ step.good-id.outputs.good }}
+          echo ${{ steps.good-id.outputs.good }}
