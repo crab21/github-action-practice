@@ -1,0 +1,27 @@
+name: gh-scripts
+on: 
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'test'     
+        required: true
+        default: default
+
+permissions: write-all
+
+jobs:
+  dmit-us:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@v3
+        with:
+          ref: main
+      - name: Run script
+        working-directory: test
+        run: |
+          echo "Hello, World!"
+          echo $GITHUB_WORKSPACE
+          ls ../
+          cd ../.github/scripts
+          docker ps -a
