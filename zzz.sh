@@ -61,6 +61,6 @@ if [ -n "$BASH_VERSION" ]; then
     complete -F _mycommand_completion_bash mycommand
 elif [ -n "$ZSH_VERSION" ]; then
     # Zsh
-    echo "zsh......."
+    echo "zsh........"
     compdef _mycommand_completion_zsh mycommand
 fi
